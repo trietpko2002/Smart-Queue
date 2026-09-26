@@ -1,0 +1,6 @@
+{
+  "name": "Smart Queue",
+  "description": "Hệ thống quản lý hàng đợi, bốc số tự động Kiosk & TV sảnh, đặt lịch hẹn và bảng tuyên truyền chính sách Dịch vụ công Quốc gia theo Đề án 06/CP",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

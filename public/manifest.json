@@ -1,0 +1,47 @@
+{
+  "name": "Smart Queue – Quản Lý Hàng Đợi & Bốc Số Tự Động",
+  "short_name": "SmartQueue",
+  "description": "Hệ thống quản lý hàng đợi, bốc số Kiosk cảm ứng & TV sảnh, tra cứu tiến độ lượt gọi trực tuyến đa nền tảng theo Đề án 06/CP",
+  "start_url": "/",
+  "id": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone", "minimal-ui"],
+  "orientation": "any",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "vi",
+  "dir": "ltr",
+  "scope": "/",
+  "categories": ["utilities", "productivity", "government", "business"],
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "192x192 256x256 512x512 any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kiosk Lấy Số Cảm Ứng",
+      "short_name": "Kiosk Sảnh",
+      "description": "Mở chế độ Kiosk toàn màn hình cho công dân bốc số",
+      "url": "/kiosk",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Màn Hình TV Gọi Số",
+      "short_name": "TV Display",
+      "description": "Màn hình hiển thị số thứ tự sảnh chờ và phát âm thanh đọc số",
+      "url": "/tv",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Bàn Nghiệp Vụ Cán Bộ",
+      "short_name": "Quầy Cán Bộ",
+      "description": "Khu vực cán bộ tiếp nhận hồ sơ, gọi số và chuyển quầy",
+      "url": "/staff",
+      "icons": [{ "src": "/icon.svg", "sizes": "192x192" }]
+    }
+  ]
+}

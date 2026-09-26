@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="50%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="ticketGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#2563eb" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Background Rounded Squircle -->
+  <rect width="512" height="512" rx="115" fill="url(#bgGrad)" />
+  <rect x="12" y="12" width="488" height="488" rx="103" fill="none" stroke="#38bdf8" stroke-opacity="0.3" stroke-width="4" />
+
+  <!-- Digital Queue Ticket Shape -->
+  <g transform="translate(106, 86)" filter="url(#glow)">
+    <!-- Ticket Body -->
+    <path d="M 0 36 C 0 16.1 16.1 0 36 0 L 264 0 C 283.9 0 300 16.1 300 36 L 300 130 C 280 130 264 146 264 166 C 264 186 280 202 300 202 L 300 304 C 300 323.9 283.9 340 264 340 L 36 340 C 16.1 340 0 323.9 0 304 L 0 202 C 20 202 36 186 36 166 C 36 146 20 130 0 130 Z" fill="#ffffff" fill-opacity="0.95" />
+    
+    <!-- Top Header Stripe -->
+    <rect x="30" y="28" width="240" height="24" rx="12" fill="url(#ticketGrad)" />
+    
+    <!-- Ticket Number "001" -->
+    <text x="150" y="135" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="78" font-weight="900" text-anchor="middle" fill="#0f172a" letter-spacing="4">
+      #01
+    </text>
+
+    <!-- Dashed separator line -->
+    <line x1="45" y1="166" x2="255" y2="166" stroke="#94a3b8" stroke-width="3" stroke-dasharray="8 8" />
+
+    <!-- Subtitle text -->
+    <text x="150" y="205" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" text-anchor="middle" fill="#0284c7" letter-spacing="1">
+      SMART QUEUE
+    </text>
+
+    <!-- Bottom QR / Signal Indicator -->
+    <circle cx="150" cy="265" r="38" fill="url(#ticketGrad)" />
+    <path d="M 136 265 L 146 275 L 166 253" fill="none" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+
+  <!-- Pulsing Star / State Badge in top right -->
+  <circle cx="395" cy="115" r="18" fill="url(#goldGrad)" />
+  <polygon points="395,102 399,111 408,112 401,118 403,127 395,122 387,127 389,118 382,112 391,111" fill="#ffffff" />
+</svg>

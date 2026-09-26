@@ -1,0 +1,1041 @@
+{
+  "organization": {
+    "id": "org_01",
+    "name": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG",
+    "slogan": "Công khai – Minh bạch – Tận tình – Đúng hẹn",
+    "hotline": "1900 1234",
+    "logoUrl": "/logo.svg"
+  },
+  "branches": [
+    {
+      "id": "branch_01",
+      "orgId": "org_01",
+      "name": "Trụ sở chính - Cơ sở 01 (Trung tâm)",
+      "code": "CS01",
+      "address": "Số 123 Đại lộ Trần Hưng Đạo, Phường 1, Thành phố",
+      "phone": "028.3829.1111",
+      "active": true
+    },
+    {
+      "id": "branch_02",
+      "orgId": "org_01",
+      "name": "Chi nhánh phía Đông - Cơ sở 02",
+      "code": "CS02",
+      "address": "Số 45 Đại lộ Võ Nguyên Giáp, Phường Đông Hòa, Thành phố",
+      "phone": "028.3829.2222",
+      "active": true
+    }
+  ],
+  "services": [
+    {
+      "id": "srv_ca",
+      "branchId": "branch_01",
+      "name": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "code": "CONG_AN",
+      "prefix": "CA",
+      "description": "Làm mới, cấp đổi thẻ CCCD gắn chip và kích hoạt tài khoản định danh VNeID mức độ 2",
+      "dailyMax": 150,
+      "startNumber": 1,
+      "digitCount": 3,
+      "avgServiceTimeMinutes": 12,
+      "isOnlineEnabled": true,
+      "isKioskEnabled": true,
+      "isPriorityEnabled": true,
+      "isPreBookingEnabled": true,
+      "active": true,
+      "fields": [
+        {
+          "id": "fullname",
+          "label": "Họ và tên người yêu cầu",
+          "type": "text",
+          "required": true,
+          "placeholder": "Ví dụ: Nguyễn Văn An",
+          "order": 1,
+          "visibility": true
+        },
+        {
+          "id": "citizen_id",
+          "label": "Số định danh cá nhân (CCCD/CMND)",
+          "type": "text",
+          "required": true,
+          "validation": "^[0-9]{9,12}$",
+          "placeholder": "Nhập 12 số định danh công dân",
+          "order": 2,
+          "visibility": true,
+          "antiDuplicateKey": true
+        },
+        {
+          "id": "phone",
+          "label": "Số điện thoại liên hệ",
+          "type": "text",
+          "required": true,
+          "placeholder": "090xxxxxxx",
+          "order": 3,
+          "visibility": true
+        },
+        {
+          "id": "service_detail",
+          "label": "Thủ tục chi tiết",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Cấp đổi thẻ CCCD gắn chip (hết hạn / đổi thông tin)",
+            "Cấp lại thẻ CCCD bị mất",
+            "Kích hoạt định danh điện tử VNeID mức 2",
+            "Thu nhận vân tay / chụp ảnh khuôn mặt"
+          ],
+          "order": 4,
+          "visibility": true
+        }
+      ]
+    },
+    {
+      "id": "srv_dd",
+      "branchId": "branch_01",
+      "name": "Đất đai & Tài nguyên Môi trường",
+      "code": "DAT_DAI",
+      "prefix": "DD",
+      "description": "Đăng ký biến động quyền sử dụng đất, cấp Giấy chứng nhận quyền sử dụng đất (Sổ đỏ/hồng)",
+      "dailyMax": 80,
+      "startNumber": 1,
+      "digitCount": 3,
+      "avgServiceTimeMinutes": 15,
+      "isOnlineEnabled": true,
+      "isKioskEnabled": true,
+      "isPriorityEnabled": true,
+      "isPreBookingEnabled": true,
+      "active": true,
+      "fields": [
+        {
+          "id": "fullname",
+          "label": "Họ và tên chủ hồ sơ",
+          "type": "text",
+          "required": true,
+          "placeholder": "Nguyễn Thị Hoa",
+          "order": 1,
+          "visibility": true
+        },
+        {
+          "id": "citizen_id",
+          "label": "Số CCCD chủ sở hữu",
+          "type": "text",
+          "required": true,
+          "order": 2,
+          "visibility": true
+        },
+        {
+          "id": "dossier_code",
+          "label": "Mã hồ sơ tiếp nhận (nếu có)",
+          "type": "text",
+          "required": true,
+          "placeholder": "VD: HS-DD-2026-9812",
+          "order": 3,
+          "visibility": true,
+          "antiDuplicateKey": true
+        },
+        {
+          "id": "transaction_type",
+          "label": "Loại thủ tục",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Đăng ký biến động (chuyển nhượng, tặng cho, thừa kế)",
+            "Cấp mới Giấy chứng nhận lần đầu",
+            "Xóa thế chấp, đăng ký giao dịch bảo đảm",
+            "Đo đạc, tách thửa, hợp thửa"
+          ],
+          "order": 4,
+          "visibility": true
+        }
+      ]
+    },
+    {
+      "id": "srv_ht",
+      "branchId": "branch_01",
+      "name": "Đăng ký Hộ tịch & Chứng thực tư pháp",
+      "code": "HO_TICH",
+      "prefix": "HT",
+      "description": "Khai sinh, kết hôn, xác nhận tình trạng hôn nhân, sao y bản chính & chứng thực chữ ký",
+      "dailyMax": 120,
+      "startNumber": 1,
+      "digitCount": 3,
+      "avgServiceTimeMinutes": 8,
+      "isOnlineEnabled": true,
+      "isKioskEnabled": true,
+      "isPriorityEnabled": true,
+      "isPreBookingEnabled": false,
+      "active": true,
+      "fields": [
+        {
+          "id": "fullname",
+          "label": "Họ và tên công dân",
+          "type": "text",
+          "required": true,
+          "placeholder": "Trần Văn Bình",
+          "order": 1,
+          "visibility": true
+        },
+        {
+          "id": "phone",
+          "label": "Số điện thoại",
+          "type": "text",
+          "required": true,
+          "order": 2,
+          "visibility": true,
+          "antiDuplicateKey": true
+        },
+        {
+          "id": "procedure",
+          "label": "Nội dung thực hiện",
+          "type": "select",
+          "required": true,
+          "options": [
+            "Sao y bản chính giấy tờ, văn bản (chứng thực)",
+            "Chứng thực chữ ký công dân",
+            "Cấp giấy xác nhận tình trạng hôn nhân",
+            "Đăng ký khai sinh / kết hôn / khai tử"
+          ],
+          "order": 3,
+          "visibility": true
+        }
+      ]
+    },
+    {
+      "id": "srv_kd",
+      "branchId": "branch_01",
+      "name": "Đăng ký Doanh nghiệp & Hộ kinh doanh cá thể",
+      "code": "KINH_DOANH",
+      "prefix": "KD",
+      "description": "Cấp mới, điều chỉnh giấy phép đăng ký kinh doanh và thuế môn bài",
+      "dailyMax": 60,
+      "startNumber": 1,
+      "digitCount": 3,
+      "avgServiceTimeMinutes": 14,
+      "isOnlineEnabled": true,
+      "isKioskEnabled": true,
+      "isPriorityEnabled": false,
+      "isPreBookingEnabled": true,
+      "active": true,
+      "fields": [
+        {
+          "id": "business_name",
+          "label": "Tên Doanh nghiệp / Hộ kinh doanh",
+          "type": "text",
+          "required": true,
+          "placeholder": "Công ty TNHH Phát Triển Công Nghệ Á Châu",
+          "order": 1,
+          "visibility": true
+        },
+        {
+          "id": "representative_name",
+          "label": "Người đại diện theo pháp luật",
+          "type": "text",
+          "required": true,
+          "order": 2,
+          "visibility": true
+        },
+        {
+          "id": "tax_code",
+          "label": "Mã số thuế / Mã số doanh nghiệp",
+          "type": "text",
+          "required": true,
+          "placeholder": "0312345678",
+          "order": 3,
+          "visibility": true,
+          "antiDuplicateKey": true
+        }
+      ]
+    }
+  ],
+  "counters": [
+    {
+      "id": "cnt_01",
+      "branchId": "branch_01",
+      "code": "Quầy 01",
+      "name": "Tiếp nhận hồ sơ Công an & CCCD",
+      "serviceIds": [
+        "srv_ca"
+      ],
+      "currentStaffId": "usr_admin",
+      "currentStaffName": "Quản trị viên Hệ thống",
+      "status": "CALLING",
+      "currentTicketId": "tkt_8fae49487b39",
+      "currentTicketNumber": "CA-005"
+    },
+    {
+      "id": "cnt_02",
+      "branchId": "branch_01",
+      "code": "Quầy 02",
+      "name": "Cấp đổi CCCD & Hộ tịch",
+      "serviceIds": [
+        "srv_ca",
+        "srv_ht"
+      ],
+      "currentStaffId": "usr_staff_02",
+      "currentStaffName": "Trần Thị Mai",
+      "status": "CALLING",
+      "currentTicketId": "tkt_demo_02",
+      "currentTicketNumber": "HT-015"
+    },
+    {
+      "id": "cnt_03",
+      "branchId": "branch_01",
+      "code": "Quầy 03",
+      "name": "Địa chính & Đất đai (Bàn 1)",
+      "serviceIds": [
+        "srv_dd"
+      ],
+      "currentStaffId": "usr_staff_03",
+      "currentStaffName": "Lê Hoàng Nam",
+      "status": "SERVING",
+      "currentTicketId": "tkt_demo_03",
+      "currentTicketNumber": "DD-008"
+    },
+    {
+      "id": "cnt_04",
+      "branchId": "branch_01",
+      "code": "Quầy 04",
+      "name": "Địa chính & Đất đai (Bàn 2)",
+      "serviceIds": [
+        "srv_dd"
+      ],
+      "status": "IDLE"
+    },
+    {
+      "id": "cnt_05",
+      "branchId": "branch_01",
+      "code": "Quầy 05",
+      "name": "Hộ tịch & Chứng thực",
+      "serviceIds": [
+        "srv_ht"
+      ],
+      "status": "IDLE"
+    },
+    {
+      "id": "cnt_06",
+      "branchId": "branch_01",
+      "code": "Quầy 06",
+      "name": "Đăng ký kinh doanh",
+      "serviceIds": [
+        "srv_kd"
+      ],
+      "status": "CLOSED"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "tkt_demo_01",
+      "token": "TK78A29B",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-021",
+      "sequenceNumber": 21,
+      "sourceChannel": "KIOSK",
+      "priority": "NORMAL",
+      "status": "NO_SHOW",
+      "customerData": {
+        "fullname": "Lê Minh Tuấn",
+        "citizen_id": "079090012345",
+        "phone": "0903123456",
+        "service_detail": "Cấp đổi thẻ CCCD gắn chip (hết hạn / đổi thông tin)"
+      },
+      "antiDuplicateHash": "079090012345",
+      "currentCounterId": "cnt_01",
+      "currentCounterCode": "Quầy 01",
+      "currentStaffId": "usr_staff_01",
+      "currentStaffName": "Nguyễn Văn An",
+      "createdAt": "2026-09-05T06:59:29.685Z",
+      "calledAt": "2026-09-05T07:25:48.877Z",
+      "servingStartedAt": "2026-09-05T07:20:29.685Z"
+    },
+    {
+      "id": "tkt_demo_02",
+      "token": "TK99B81C",
+      "branchId": "branch_01",
+      "serviceId": "srv_ht",
+      "serviceName": "Đăng ký Hộ tịch & Chứng thực tư pháp",
+      "servicePrefix": "HT",
+      "ticketNumber": "HT-015",
+      "sequenceNumber": 15,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "ELDERLY",
+      "priorityReason": "Người cao tuổi (trên 70 tuổi)",
+      "status": "CALLED",
+      "customerData": {
+        "fullname": "Bà Đặng Thị Loan",
+        "phone": "0912888999",
+        "procedure": "Sao y bản chính giấy tờ, văn bản (chứng thực)"
+      },
+      "antiDuplicateHash": "0912888999",
+      "currentCounterId": "cnt_02",
+      "currentCounterCode": "Quầy 02",
+      "currentStaffId": "usr_staff_02",
+      "currentStaffName": "Trần Thị Mai",
+      "createdAt": "2026-09-05T07:06:29.685Z",
+      "calledAt": "2026-09-05T07:23:29.685Z"
+    },
+    {
+      "id": "tkt_demo_03",
+      "token": "TK43C55D",
+      "branchId": "branch_01",
+      "serviceId": "srv_dd",
+      "serviceName": "Đất đai & Tài nguyên Môi trường",
+      "servicePrefix": "DD",
+      "ticketNumber": "DD-008",
+      "sequenceNumber": 8,
+      "sourceChannel": "KIOSK",
+      "priority": "NORMAL",
+      "status": "SERVING",
+      "customerData": {
+        "fullname": "Hoàng Văn Thái",
+        "citizen_id": "079185002233",
+        "dossier_code": "HS-DD-2026-9812",
+        "transaction_type": "Đăng ký biến động (chuyển nhượng, tặng cho, thừa kế)"
+      },
+      "antiDuplicateHash": "HS-DD-2026-9812",
+      "currentCounterId": "cnt_03",
+      "currentCounterCode": "Quầy 03",
+      "currentStaffId": "usr_staff_03",
+      "currentStaffName": "Lê Hoàng Nam",
+      "createdAt": "2026-09-05T06:52:29.685Z",
+      "calledAt": "2026-09-05T07:12:29.685Z",
+      "servingStartedAt": "2026-09-05T07:14:29.685Z"
+    },
+    {
+      "id": "tkt_demo_04",
+      "token": "TK12D44E",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-022",
+      "sequenceNumber": 22,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "NORMAL",
+      "status": "WAITING",
+      "customerData": {
+        "fullname": "Phan Quốc Bảo",
+        "citizen_id": "079095009988",
+        "phone": "0933221100",
+        "service_detail": "Kích hoạt định danh điện tử VNeID mức 2"
+      },
+      "antiDuplicateHash": "079095009988",
+      "createdAt": "2026-09-05T07:10:29.685Z"
+    },
+    {
+      "id": "tkt_demo_05",
+      "token": "TK33E66F",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-023",
+      "sequenceNumber": 23,
+      "sourceChannel": "KIOSK",
+      "priority": "PREGNANT",
+      "priorityReason": "Phụ nữ mang thai",
+      "status": "NO_SHOW",
+      "customerData": {
+        "fullname": "Ngô Thanh Hằng",
+        "citizen_id": "079198007766",
+        "phone": "0977665544",
+        "service_detail": "Cấp đổi thẻ CCCD gắn chip (hết hạn / đổi thông tin)"
+      },
+      "antiDuplicateHash": "079198007766",
+      "createdAt": "2026-09-05T07:14:29.685Z",
+      "calledAt": "2026-09-05T07:25:58.949Z",
+      "currentCounterId": "cnt_01",
+      "currentCounterCode": "Quầy 01",
+      "currentStaffId": "usr_staff_01",
+      "currentStaffName": "Nguyễn Văn An (Cán bộ)"
+    },
+    {
+      "id": "tkt_demo_06",
+      "token": "TK55F77G",
+      "branchId": "branch_01",
+      "serviceId": "srv_ht",
+      "serviceName": "Đăng ký Hộ tịch & Chứng thực tư pháp",
+      "servicePrefix": "HT",
+      "ticketNumber": "HT-016",
+      "sequenceNumber": 16,
+      "sourceChannel": "KIOSK",
+      "priority": "NORMAL",
+      "status": "WAITING",
+      "customerData": {
+        "fullname": "Vũ Đức Thịnh",
+        "phone": "0908112233",
+        "procedure": "Cấp giấy xác nhận tình trạng hôn nhân"
+      },
+      "antiDuplicateHash": "0908112233",
+      "createdAt": "2026-09-05T07:16:29.685Z"
+    },
+    {
+      "id": "tkt_demo_07",
+      "token": "TK88G99H",
+      "branchId": "branch_01",
+      "serviceId": "srv_dd",
+      "serviceName": "Đất đai & Tài nguyên Môi trường",
+      "servicePrefix": "DD",
+      "ticketNumber": "DD-009",
+      "sequenceNumber": 9,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "NORMAL",
+      "status": "WAITING",
+      "customerData": {
+        "fullname": "Phạm Thị Thảo",
+        "citizen_id": "079199003322",
+        "dossier_code": "HS-DD-2026-9920",
+        "transaction_type": "Xóa thế chấp, đăng ký giao dịch bảo đảm"
+      },
+      "antiDuplicateHash": "HS-DD-2026-9920",
+      "createdAt": "2026-09-05T07:19:29.685Z"
+    },
+    {
+      "id": "tkt_a4466276da16",
+      "token": "TK1E7230D9",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-004",
+      "sequenceNumber": 4,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "NORMAL",
+      "status": "CALLED",
+      "customerData": {
+        "fullname": "1",
+        "citizen_id": "058202007395",
+        "phone": "1111",
+        "service_detail": "Cấp đổi thẻ CCCD gắn chip (hết hạn / đổi thông tin)"
+      },
+      "antiDuplicateHash": "058202007395",
+      "createdAt": "2026-09-05T07:25:03.596Z",
+      "calledAt": "2026-09-05T07:26:03.425Z",
+      "currentCounterId": "cnt_01",
+      "currentCounterCode": "Quầy 01",
+      "currentStaffId": "usr_staff_01",
+      "currentStaffName": "Nguyễn Văn An (Cán bộ)"
+    },
+    {
+      "id": "tkt_8fae49487b39",
+      "token": "TK12927EFE",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-005",
+      "sequenceNumber": 5,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "NORMAL",
+      "status": "CALLED",
+      "customerData": {
+        "fullname": "1",
+        "citizen_id": "111111111111",
+        "phone": "1111111",
+        "service_detail": "Cấp lại thẻ CCCD bị mất"
+      },
+      "antiDuplicateHash": "111111111111",
+      "createdAt": "2026-09-05T07:38:18.132Z",
+      "calledAt": "2026-09-05T07:49:18.260Z",
+      "currentCounterId": "cnt_01",
+      "currentCounterCode": "Quầy 01",
+      "currentStaffId": "usr_admin",
+      "currentStaffName": "Quản trị viên Hệ thống"
+    },
+    {
+      "id": "tkt_c7e81ba6961f",
+      "token": "TK140B89C6",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-006",
+      "sequenceNumber": 6,
+      "sourceChannel": "ONLINE_PHONE",
+      "priority": "NORMAL",
+      "status": "WAITING",
+      "customerData": {
+        "fullname": "1111111",
+        "citizen_id": "1111111111",
+        "phone": "2121212",
+        "service_detail": "Cấp đổi thẻ CCCD gắn chip (hết hạn / đổi thông tin)"
+      },
+      "antiDuplicateHash": "1111111111",
+      "createdAt": "2026-09-05T07:39:00.141Z"
+    },
+    {
+      "id": "tkt_c976e11cdcf5",
+      "token": "TK7A4DBF15",
+      "branchId": "branch_01",
+      "serviceId": "srv_ca",
+      "serviceName": "Cấp đổi Căn cước công dân & Định danh điện tử (VNeID)",
+      "servicePrefix": "CA",
+      "ticketNumber": "CA-007",
+      "sequenceNumber": 7,
+      "sourceChannel": "KIOSK",
+      "priority": "NORMAL",
+      "status": "WAITING",
+      "customerData": {
+        "fullname": "TRIET",
+        "citizen_id": "000000000",
+        "phone": "124",
+        "service_detail": "Q"
+      },
+      "antiDuplicateHash": "000000000",
+      "createdAt": "2026-09-05T07:40:59.848Z"
+    }
+  ],
+  "ticketEvents": [
+    {
+      "id": "evt_01",
+      "ticketId": "tkt_demo_01",
+      "ticketNumber": "CA-021",
+      "eventType": "CREATED",
+      "timestamp": "2026-09-05T06:59:29.685Z",
+      "actorName": "Hệ thống Kiosk Sảnh A",
+      "note": "Lấy số thành công tại Kiosk"
+    },
+    {
+      "id": "evt_02",
+      "ticketId": "tkt_demo_01",
+      "ticketNumber": "CA-021",
+      "eventType": "CALLED",
+      "timestamp": "2026-09-05T07:18:29.685Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Cán bộ bấm gọi số"
+    },
+    {
+      "id": "evt_03",
+      "ticketId": "tkt_demo_01",
+      "ticketNumber": "CA-021",
+      "eventType": "SERVING",
+      "timestamp": "2026-09-05T07:20:29.685Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Bắt đầu tiếp nhận và xử lý hồ sơ"
+    },
+    {
+      "id": "evt_1788593103596",
+      "ticketId": "tkt_a4466276da16",
+      "ticketNumber": "CA-004",
+      "eventType": "CREATED",
+      "timestamp": "2026-09-05T07:25:03.596Z",
+      "actorName": "Đăng ký trực tuyến Mobile",
+      "note": "Lấy số thành công (Thường)"
+    },
+    {
+      "id": "evt_1788593148877",
+      "ticketId": "tkt_demo_01",
+      "ticketNumber": "CA-021",
+      "eventType": "RECALLED",
+      "timestamp": "2026-09-05T07:25:48.877Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Nhắc lại số CA-021 lần tiếp theo"
+    },
+    {
+      "id": "evt_1788593156744",
+      "ticketId": "tkt_demo_01",
+      "ticketNumber": "CA-021",
+      "eventType": "NO_SHOW",
+      "timestamp": "2026-09-05T07:25:56.744Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Người dân không có mặt sau nhiều lần gọi"
+    },
+    {
+      "id": "evt_1788593158949",
+      "ticketId": "tkt_demo_05",
+      "ticketNumber": "CA-023",
+      "eventType": "CALLED",
+      "timestamp": "2026-09-05T07:25:58.949Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Mời số CA-023 đến Quầy 01"
+    },
+    {
+      "id": "evt_1788593162134",
+      "ticketId": "tkt_demo_05",
+      "ticketNumber": "CA-023",
+      "eventType": "NO_SHOW",
+      "timestamp": "2026-09-05T07:26:02.134Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Người dân không có mặt sau nhiều lần gọi"
+    },
+    {
+      "id": "evt_1788593163425",
+      "ticketId": "tkt_a4466276da16",
+      "ticketNumber": "CA-004",
+      "eventType": "CALLED",
+      "timestamp": "2026-09-05T07:26:03.425Z",
+      "actorId": "usr_staff_01",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Mời số CA-004 đến Quầy 01"
+    },
+    {
+      "id": "evt_1788593898132",
+      "ticketId": "tkt_8fae49487b39",
+      "ticketNumber": "CA-005",
+      "eventType": "CREATED",
+      "timestamp": "2026-09-05T07:38:18.132Z",
+      "actorName": "Đăng ký trực tuyến Mobile",
+      "note": "Lấy số thành công (Thường)"
+    },
+    {
+      "id": "evt_1788593940141",
+      "ticketId": "tkt_c7e81ba6961f",
+      "ticketNumber": "CA-006",
+      "eventType": "CREATED",
+      "timestamp": "2026-09-05T07:39:00.141Z",
+      "actorName": "Đăng ký trực tuyến Mobile",
+      "note": "Lấy số thành công (Thường)"
+    },
+    {
+      "id": "evt_1788594059848",
+      "ticketId": "tkt_c976e11cdcf5",
+      "ticketNumber": "CA-007",
+      "eventType": "CREATED",
+      "timestamp": "2026-09-05T07:40:59.848Z",
+      "actorName": "Máy Kiosk tự phục vụ",
+      "note": "Lấy số thành công (Thường)"
+    },
+    {
+      "id": "evt_1788594558260",
+      "ticketId": "tkt_8fae49487b39",
+      "ticketNumber": "CA-005",
+      "eventType": "CALLED",
+      "timestamp": "2026-09-05T07:49:18.260Z",
+      "actorId": "usr_admin",
+      "actorName": "Quản trị viên Hệ thống",
+      "counterId": "cnt_01",
+      "counterCode": "Quầy 01",
+      "note": "Mời số CA-005 đến Quầy 01"
+    }
+  ],
+  "kiosks": [
+    {
+      "id": "kiosk_01",
+      "branchId": "branch_01",
+      "name": "Máy Kiosk Sảnh Chính A",
+      "location": "Khu vực đón tiếp tầng 1 (Cửa chính)",
+      "allowedServiceIds": [
+        "srv_ca",
+        "srv_dd",
+        "srv_ht",
+        "srv_kd"
+      ],
+      "autoResetSeconds": 15,
+      "printerStatus": "OK",
+      "status": "ONLINE",
+      "lastPing": "2026-09-05T07:24:29.685Z"
+    },
+    {
+      "id": "kiosk_02",
+      "branchId": "branch_01",
+      "name": "Máy Kiosk Khu Vực Hộ Tịch",
+      "location": "Khu tiếp nhận hồ sơ hộ tịch tầng 1",
+      "allowedServiceIds": [
+        "srv_ht"
+      ],
+      "autoResetSeconds": 15,
+      "printerStatus": "OK",
+      "status": "ONLINE",
+      "lastPing": "2026-09-05T07:24:29.685Z"
+    }
+  ],
+  "displays": [
+    {
+      "id": "disp_01",
+      "branchId": "branch_01",
+      "name": "Màn hình TV Trung tâm Sảnh Chờ (65 inch)",
+      "location": "Chính diện hàng ghế chờ sảnh chính",
+      "voiceConfig": {
+        "enabled": true,
+        "voiceName": "vi-VN",
+        "speed": 0.95,
+        "repeatCount": 1,
+        "customTemplate": "Kính mời số {ticket} đến {counter}"
+      },
+      "status": "ONLINE",
+      "lastPing": "2026-09-05T07:24:29.685Z"
+    }
+  ],
+  "auditLogs": [
+    {
+      "id": "log_01",
+      "branchId": "branch_01",
+      "actorRole": "STAFF",
+      "actorName": "Nguyễn Văn An",
+      "action": "CALL_TICKET",
+      "targetType": "TICKET",
+      "targetId": "CA-021",
+      "timestamp": "2026-09-05T07:18:29.685Z",
+      "details": "Gọi số CA-021 vào Quầy 01"
+    },
+    {
+      "id": "log_02",
+      "branchId": "branch_01",
+      "actorRole": "STAFF",
+      "actorName": "Trần Thị Mai",
+      "action": "CALL_TICKET",
+      "targetType": "TICKET",
+      "targetId": "HT-015",
+      "timestamp": "2026-09-05T07:23:29.685Z",
+      "details": "Gọi số HT-015 (Ưu tiên người cao tuổi) vào Quầy 02"
+    },
+    {
+      "id": "log_1788593103596",
+      "branchId": "branch_01",
+      "actorRole": "CITIZEN",
+      "actorName": "Hệ thống Cấp Số",
+      "action": "ISSUE_TICKET",
+      "targetType": "TICKET",
+      "targetId": "CA-004",
+      "timestamp": "2026-09-05T07:25:03.596Z",
+      "details": "Cấp số CA-004 qua ONLINE_PHONE"
+    },
+    {
+      "id": "log_1788593158949",
+      "branchId": "branch_01",
+      "actorRole": "STAFF",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "action": "CALL_NEXT",
+      "targetType": "TICKET",
+      "targetId": "CA-023",
+      "timestamp": "2026-09-05T07:25:58.949Z",
+      "details": "Gọi số CA-023 vào Quầy 01"
+    },
+    {
+      "id": "log_1788593163425",
+      "branchId": "branch_01",
+      "actorRole": "STAFF",
+      "actorName": "Nguyễn Văn An (Cán bộ)",
+      "action": "CALL_NEXT",
+      "targetType": "TICKET",
+      "targetId": "CA-004",
+      "timestamp": "2026-09-05T07:26:03.425Z",
+      "details": "Gọi số CA-004 vào Quầy 01"
+    },
+    {
+      "id": "log_1788593898133",
+      "branchId": "branch_01",
+      "actorRole": "CITIZEN",
+      "actorName": "Hệ thống Cấp Số",
+      "action": "ISSUE_TICKET",
+      "targetType": "TICKET",
+      "targetId": "CA-005",
+      "timestamp": "2026-09-05T07:38:18.132Z",
+      "details": "Cấp số CA-005 qua ONLINE_PHONE"
+    },
+    {
+      "id": "log_1788593940141",
+      "branchId": "branch_01",
+      "actorRole": "CITIZEN",
+      "actorName": "Hệ thống Cấp Số",
+      "action": "ISSUE_TICKET",
+      "targetType": "TICKET",
+      "targetId": "CA-006",
+      "timestamp": "2026-09-05T07:39:00.141Z",
+      "details": "Cấp số CA-006 qua ONLINE_PHONE"
+    },
+    {
+      "id": "log_1788594059848",
+      "branchId": "branch_01",
+      "actorRole": "KIOSK",
+      "actorName": "Hệ thống Cấp Số",
+      "action": "ISSUE_TICKET",
+      "targetType": "TICKET",
+      "targetId": "CA-007",
+      "timestamp": "2026-09-05T07:40:59.848Z",
+      "details": "Cấp số CA-007 qua KIOSK"
+    },
+    {
+      "id": "log_1788594558260",
+      "branchId": "branch_01",
+      "actorRole": "STAFF",
+      "actorName": "Quản trị viên Hệ thống",
+      "action": "CALL_NEXT",
+      "targetType": "TICKET",
+      "targetId": "CA-005",
+      "timestamp": "2026-09-05T07:49:18.260Z",
+      "details": "Gọi số CA-005 vào Quầy 01"
+    }
+  ],
+  "users": [
+    {
+      "id": "usr_admin",
+      "username": "admin",
+      "password": "admin123",
+      "name": "Quản trị viên Hệ thống",
+      "role": "ADMIN",
+      "phone": "0903112233",
+      "status": "ACTIVE",
+      "branchId": "branch_01",
+      "createdAt": "2026-09-05T07:24:29.685Z"
+    },
+    {
+      "id": "usr_coord",
+      "username": "coordinator",
+      "password": "coord123",
+      "name": "Phạm Quốc Huy (Điều phối viên)",
+      "role": "COORDINATOR",
+      "phone": "0908556677",
+      "status": "ACTIVE",
+      "branchId": "branch_01",
+      "createdAt": "2026-09-05T07:24:29.685Z"
+    },
+    {
+      "id": "usr_staff_01",
+      "username": "staff01",
+      "password": "staff123",
+      "name": "Nguyễn Văn An (Cán bộ)",
+      "role": "STAFF",
+      "counterId": "cnt_01",
+      "phone": "0912345678",
+      "status": "ACTIVE",
+      "branchId": "branch_01",
+      "createdAt": "2026-09-05T07:24:29.685Z"
+    },
+    {
+      "id": "usr_staff_02",
+      "username": "staff02",
+      "password": "staff123",
+      "name": "Trần Thị Mai (Cán bộ)",
+      "role": "STAFF",
+      "counterId": "cnt_02",
+      "phone": "0918765432",
+      "status": "ACTIVE",
+      "branchId": "branch_01",
+      "createdAt": "2026-09-05T07:24:29.685Z"
+    },
+    {
+      "id": "usr_staff_03",
+      "username": "staff03",
+      "password": "staff123",
+      "name": "Lê Hoàng Nam (Cán bộ)",
+      "role": "STAFF",
+      "counterId": "cnt_03",
+      "phone": "0933445566",
+      "status": "ACTIVE",
+      "branchId": "branch_01",
+      "createdAt": "2026-09-05T07:24:29.685Z"
+    }
+  ],
+  "propaganda": {
+    "orgName": "ỦY BAN NHÂN DÂN THÀNH PHỐ • TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG",
+    "subTitle": "HỆ THỐNG MỘT CỬA ĐIỆN TỬ & DỊCH VỤ CÔNG QUỐC GIA",
+    "appTitle": "Hệ Thống Xếp Hàng & Phục Vụ Hành Chính Công Điện Tử",
+    "hotline": "1022 - 1900 9068",
+    "address": "Số 123 Đại lộ Trần Hưng Đạo, Phường 1, Trung tâm Hành chính Thành phố",
+    "workingHours": "Sáng: 07:30 – 11:30 | Chiều: 13:00 – 17:00 (Thứ Hai đến Thứ Sáu)",
+    "nationalPortalUrl": "https://dichvucong.gov.vn",
+    "slogans": [
+      "★ NHIỆT LIỆT HƯỞNG ỨNG PHONG TRÀO CHUYỂN ĐỔI SỐ QUỐC GIA - ĐỀ ÁN 06/CP CỦA CHÍNH PHỦ ★",
+      "★ TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG: LẤY SỰ HÀI LÒNG CỦA CÔNG DÂN VÀ DOANH NGHIỆP LÀM MỤC TIÊU PHỤC VỤ ★",
+      "★ KHUYẾN KHÍCH NỘP HỒ SƠ TRỰC TUYẾN TẠI CỔNG DỊCH VỤ CÔNG QUỐC GIA (DICHVUCONG.GOV.VN) ĐỂ TIẾT KIỆM THỜI GIAN ★",
+      "★ TÍCH HỢP GIẤY TỜ TRÊN ỨNG DỤNG ĐỊNH DANH ĐIỆN TỬ VNeID MỨC 2 THAY THẾ GIẤY TỜ BẢN CỨNG TRUYỀN THỐNG ★",
+      "★ CÁN BỘ CÔNG CHỨC THỰC HIỆN 4 XIN - 4 LUÔN: XIN CHÀO, XIN LỖI, XIN CẢM ƠN, XIN PHÉP - LUÔN LẮNG NGHE, GIÚP ĐỠ ★",
+      "★ TUYÊN TRUYỀN PHÁP LUẬT: NÓI KHÔNG VỚI TIÊU CỰC, NHŨNG NHIỄU, \"CÒ MỒI\" LÀM HỒ SƠ - ĐƯỜNG DÂY NÓNG PHẢN ÁNH: 1022 ★"
+    ],
+    "banners": [
+      {
+        "id": "banner_dean06",
+        "badge": "ĐỀ ÁN 06/CHÍNH PHỦ",
+        "badgeColor": "bg-red-600 text-white",
+        "title": "PHÁT TRIỂN ỨNG DỤNG DỮ LIỆU DÂN CƯ, ĐỊNH DANH VÀ XÁC THỰC ĐIỆN TỬ",
+        "highlightText": "SỬ DỤNG VNeID MỨC 2 & CCCD GẮN CHIP THAY THẾ GIẤY TỜ TRUYỀN THỐNG",
+        "description": "Thực hiện chỉ đạo của Thủ tướng Chính phủ, người dân khi đến làm thủ tục có thể xuất trình thông tin định danh điện tử trên ứng dụng VNeID thay thế Sổ hộ khẩu, Giấy khai sinh, Giấy phép lái xe và Thẻ BHYT.",
+        "source": "ỦY BAN NHÂN DÂN THÀNH PHỐ • CÔNG AN THÀNH PHỐ",
+        "qrType": "VNEID",
+        "qrLabel": "Quét tải ứng dụng VNeID",
+        "qrUrl": "https://vneid.gov.vn",
+        "themeGradient": "from-red-950 via-red-900 to-amber-950 border-amber-500/50",
+        "iconType": "flag",
+        "tags": [
+          "Đề án 06",
+          "VNeID Mức 2",
+          "Chính phủ số"
+        ],
+        "active": true
+      },
+      {
+        "id": "banner_dvcqg",
+        "badge": "CỔNG DỊCH VỤ CÔNG QUỐC GIA",
+        "badgeColor": "bg-amber-500 text-slate-950",
+        "title": "TIẾP NHẬN VÀ GIẢI QUYẾT THỦ TỤC HÀNH CHÍNH TRỰC TUYẾN 24/7",
+        "highlightText": "NỘP HỒ SƠ TOÀN TRÌNH - THANH TOÁN TRỰC TUYẾN - NHẬN KẾT QUẢ TẠI NHÀ",
+        "description": "Quý công dân có thể nộp hồ sơ tại dichvucong.gov.vn mọi lúc, mọi nơi mà không cần xếp hàng trực tiếp. Hỗ trợ tra cứu tiến độ thời gian thực và thanh toán thuế, phí điện tử an toàn.",
+        "source": "VĂN PHÒNG CHÍNH PHỦ • TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG",
+        "qrType": "DICHVUCONG",
+        "qrLabel": "Cổng Dịch vụ công Quốc gia",
+        "qrUrl": "https://dichvucong.gov.vn",
+        "themeGradient": "from-blue-950 via-slate-900 to-indigo-950 border-blue-500/50",
+        "iconType": "landmark",
+        "tags": [
+          "DVC Toàn trình",
+          "Thanh toán trực tuyến",
+          "Tiết kiệm 80% thời gian"
+        ],
+        "active": true
+      },
+      {
+        "id": "banner_vanhoa",
+        "badge": "VĂN HÓA CÔNG VỤ & LẤY DÂN LÀM GỐC",
+        "badgeColor": "bg-emerald-600 text-white",
+        "title": "TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG: KỶ CƯƠNG - TRÁCH NHIỆM - TẬN TỤY",
+        "highlightText": "LẤY SỰ HÀI LÒNG CỦA CÔNG DÂN VÀ DOANH NGHIỆP LÀM THƯỚC ĐO HIỆU QUẢ",
+        "description": "Cam kết tiếp nhận, hướng dẫn tận tình, giải quyết hồ sơ đúng hẹn và trước hẹn. Đánh giá chất lượng phục vụ của cán bộ trực tiếp tại quầy bằng hệ thống chấm điểm điện tử.",
+        "source": "ỦY BAN NHÂN DÂN THÀNH PHỐ",
+        "qrType": "HOTLINE",
+        "qrLabel": "Đường dây nóng phản ánh: 1022",
+        "qrUrl": "tel:1022",
+        "themeGradient": "from-emerald-950 via-slate-900 to-teal-950 border-emerald-500/50",
+        "iconType": "award",
+        "tags": [
+          "Văn hóa công vụ",
+          "Đúng hẹn 100%",
+          "Đánh giá cán bộ"
+        ],
+        "active": true
+      },
+      {
+        "id": "banner_phapluat",
+        "badge": "TUYÊN TRUYỀN PHÁP LUẬT",
+        "badgeColor": "bg-purple-600 text-white",
+        "title": "PHÒNG NGỪA TIÊU CỰC, NHŨNG NHIỄU - NÓI KHÔNG VỚI \"CÒ MỒI\"",
+        "highlightText": "QUY TRÌNH MINH BẠCH - SỐ THỨ TỰ ĐIỆN TỬ - KHÔNG MÔI GIỚI BẤT HỢP PHÁP",
+        "description": "Mọi thủ tục hành chính đều được niêm yết công khai lệ phí và thời hạn giải quyết. Nghiêm cấm hành vi tiếp tay cho các đối tượng môi giới làm nhanh thu tiền trái quy định pháp luật.",
+        "source": "THANH TRA THÀNH PHỐ • TRUNG TÂM PHỤC VỤ HÀNH CHÍNH CÔNG",
+        "qrType": "HOTLINE",
+        "qrLabel": "Hộp thư & Hotline tiếp nhận",
+        "qrUrl": "tel:1022",
+        "themeGradient": "from-purple-950 via-slate-900 to-indigo-950 border-purple-500/50",
+        "iconType": "shield",
+        "tags": [
+          "Minh bạch",
+          "Phòng chống tiêu cực",
+          "Bảo vệ quyền lợi công dân"
+        ],
+        "active": true
+      }
+    ]
+  }
+}
